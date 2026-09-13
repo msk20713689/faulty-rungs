@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Faulty Rungs</title>
+<meta name="description" content="Faulty Rungs — because every step higher isn't necessarily a step forward. Coming soon.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=Fraunces:ital,opsz,wght@0,9..144,400;1,9..144,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0e0f10;
+    --paper: #f7f6f3;
+    --accent: #c98a3a;
+    --line: rgba(247,246,243,0.18);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--ink);
+    color: var(--paper);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .hero {
+    position: relative;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 24px;
+    background-image:
+      linear-gradient(180deg, rgba(10,10,11,0.55) 0%, rgba(10,10,11,0.35) 40%, rgba(8,8,9,0.85) 100%),
+      url('images/hero.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  .hero-inner { max-width: 640px; }
+  .wordmark {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 15vw;
+    line-height: 0.95;
+    letter-spacing: 0.02em;
+    margin: 0;
+    text-transform: uppercase;
+  }
+  @media (min-width: 640px) {
+    .wordmark { font-size: 68px; }
+  }
+  .tagline {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 20px;
+    color: var(--paper);
+    opacity: 0.92;
+    margin: 22px 0 34px;
+  }
+  .badge {
+    display: inline-block;
+    border: 1px solid var(--paper);
+    color: var(--paper);
+    font-size: 12.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 10px 20px;
+  }
+  .scroll-hint {
+    position: absolute;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--paper);
+    opacity: 0.55;
+  }
+
+  section.notify {
+    padding: 90px 24px;
+    background: var(--ink);
+    border-top: 1px solid var(--line);
+  }
+  .notify-inner {
+    max-width: 460px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .notify-inner h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 26px;
+    margin: 0 0 12px;
+  }
+  .notify-inner p {
+    color: rgba(247,246,243,0.65);
+    font-size: 15px;
+    margin: 0 0 34px;
+    line-height: 1.6;
+  }
+
+  .notify-form { display: flex; flex-direction: column; text-align: left; }
+  .notify-form label {
+    font-size: 12.5px;
+    color: rgba(247,246,243,0.6);
+    margin: 16px 0 6px;
+  }
+  .notify-form label:first-of-type { margin-top: 0; }
+  .notify-form input[type="text"],
+  .notify-form input[type="email"] {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: var(--paper);
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--line);
+    padding: 8px 2px;
+  }
+  .notify-form input:focus { outline: none; border-bottom-color: var(--accent); }
+  .notify-form button {
+    margin-top: 26px;
+    background: var(--accent);
+    color: #1a1200;
+    border: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 14.5px;
+    font-weight: 500;
+    padding: 13px 26px;
+    cursor: pointer;
+  }
+  .notify-form button:hover { opacity: 0.88; }
+  .notify-form button:disabled { opacity: 0.5; cursor: default; }
+  .nf-status { margin-top: 14px; font-size: 13.5px; min-height: 18px; }
+  .nf-status.ok { color: var(--accent); }
+  .nf-status.err { color: #e08b8b; }
+
+  footer {
+    padding: 26px 24px;
+    text-align: center;
+    font-size: 12.5px;
+    color: rgba(247,246,243,0.4);
+    background: var(--ink);
+  }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-inner">
+    <h1 class="wordmark">Faulty Rungs</h1>
+    <p class="tagline">Because every step higher isn't necessarily a step forward.</p>
+    <span class="badge">Coming Soon</span>
+  </div>
+  <div class="scroll-hint">Get notified ↓</div>
+</section>
+
+<section class="notify">
+  <div class="notify-inner">
+    <h2>Be the first to know</h2>
+    <p>Leave your email and you'll hear the moment Faulty Rungs is available.</p>
+    <form id="notifyForm" class="notify-form">
+      <input type="hidden" name="access_key" value="81b0b2ca-bdf9-4e25-8067-d89d40d3140a">
+      <input type="hidden" name="subject" value="New sign-up from faultyrungs.com">
+      <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
+      <label for="nf-name">Name</label>
+      <input id="nf-name" type="text" name="name" required>
+
+      <label for="nf-email">Email</label>
+      <input id="nf-email" type="email" name="email" required>
+
+      <button type="submit" id="nf-submit">Notify me</button>
+      <div id="nf-status" class="nf-status" role="status"></div>
+    </form>
+  </div>
+</section>
+
+<footer>Faulty Rungs © 2026</footer>
+
+<script>
+  var notifyForm = document.getElementById('notifyForm');
+  notifyForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var status = document.getElementById('nf-status');
+    var submitBtn = document.getElementById('nf-submit');
+    submitBtn.disabled = true;
+    status.textContent = 'Sending…';
+    status.className = 'nf-status';
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(Object.fromEntries(new FormData(notifyForm)))
+    })
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        submitBtn.disabled = false;
+        if (data.success) {
+          status.textContent = "Thanks — we'll be in touch when it's ready.";
+          status.className = 'nf-status ok';
+          notifyForm.reset();
+        } else {
+          status.textContent = 'Something went wrong. Please try again.';
+          status.className = 'nf-status err';
+        }
+      })
+      .catch(function () {
+        submitBtn.disabled = false;
+        status.textContent = 'Something went wrong. Please try again.';
+        status.className = 'nf-status err';
+      });
+  });
+</script>
+
+</body>
+</html>
